@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../core/user.service';
-import { AuthService } from '../core/auth.service';
+import { UserService } from '../../core/user.service';
+import { AuthService } from '../../core/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FirebaseUserModel } from '../core/user.model';
+import { FirebaseUserModel } from '../../core/user.model';
+import * as $ from 'jquery';
 
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.component.html',
-  styleUrls: ['user.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class UserComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
@@ -27,6 +28,20 @@ export class UserComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    
+    $(document).ready(function(){
+        $(".hamburger").click(function(){
+            $(this).toggleClass("is-active");
+            $(".sidebar").toggleClass("is-active");
+            $(this).not(this).removeClass("is-active");
+        });
+    });
+
+    $("#leftside-navigation .sub-menu > a").click(function(e) {
+      $("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+      e.stopPropagation()
+    })
+
     this.route.data.subscribe(routeData => {
       let data = routeData['data'];
       if (data) {

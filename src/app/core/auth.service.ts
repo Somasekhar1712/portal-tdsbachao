@@ -1,14 +1,18 @@
 import { Injectable } from "@angular/core";
 import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
+import { Router } from "@angular/router";
+
 
 @Injectable()
 export class AuthService {
+  userData: any;
 
   constructor(
-   public afAuth: AngularFireAuth
- ){}
+   public afAuth: AngularFireAuth,
+ ){ }
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -83,6 +87,5 @@ export class AuthService {
       }
     });
   }
-
 
 }

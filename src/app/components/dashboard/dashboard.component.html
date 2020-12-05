@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="hamburger hamburger6">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+  <a class="navbar-brand" href="https://tdsbachao.com/" target="_blank">
+    <img src="assets/images/logo.png" alt="">
+  </a>
+  <a class="user-icon">
+    <img class="img-thumbnail rounded-circle" [src]="user.image" *ngIf="user.image">
+  </a>
+</nav>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-2 col-md-2">
+      <div class="sidebar">
+        <div id="leftside-navigation" class="nano">
+          <ul class="nano-content">
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-inr"></i><span>Income Tax</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+      
+                <li><a >Individual Return</a>
+                </li>
+                <li><a >Rectification Return</a>
+                </li>
+                <li><a >Revised Return</a>
+                </li>
+                <li><a >Income Tax Notice</a>
+                </li>
+                <li><a >TDS Refund Status</a>
+                </li>
+                <li><a >Know Your Jurisdiction</a>
+                </li>
+                <li><a >Income Tax Calculator</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-pencil-square-o"></i><span>GST</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+                <li><a >Registration</a></li>
+                <li><a >Monthly Return</a></li>
+                <li><a >Quaterly Return</a></li>
+                <li><a >Bulk Invoices</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-files-o"></i><span>Accounting</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+                <li><a >Monthly Accounting</a>
+                </li>
+                <li><a >Weekly Accounting</a>
+                </li>
+                <li><a >Accoucting in Tally</a>
+                </li>
+                <li><a >Accounting in QB</a>
+                </li>
+                <li><a >Accounting in Busy</a>
+                </li>
+                <li><a >Accounting in Wave</a>
+                </li>
+                <li><a >Accounting in Excel</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-lightbulb-o"></i><span>MISC</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+                <li class="active"><a>Udhyam Registration</a>
+                </li>
+                <li><a >FSSAI</a>
+                </li>
+                <li><a >Project Report</a>
+                </li>
+                <li><a >Insurance Services</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-refresh"></i><span>Recharge</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+                <li><a >New Recharge</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Reports</span><i
+                  class="arrow fa fa-angle-right pull-right"></i></a>
+              <ul>
+                <li><a >Applications Reports</a>
+                </li>
+                <li><a >Recharge Reports</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Settings</span></a>
+            </li>
+            <li class="sub-menu logout">
+              <a (click)="logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i><span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-10 col-md-10">.col-6 .col-md-4</div>
+
+  </div>
+</div>

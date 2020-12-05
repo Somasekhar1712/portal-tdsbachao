@@ -1,0 +1,46 @@
+<div class="displayTable">
+  <div class="displayTableCell text-center">
+
+    <div class="px-logo">
+      <a href="#" target="_blank">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="authBlock">
+      <h3>Sign Up</h3>
+      <p class="text-center">Welcome to tdsbachao</p>
+      <div class="formGroup">
+        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Password" #userPwd required>
+      </div>
+
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="tryRegister(registerForm.value)">
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+
+      <!-- Continue with Google -->
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="tryGoogleLogin()">
+          <i class="fa fa-google" aria-hidden="true"></i>
+          Continue with Google
+        </button>
+      </div>
+      
+      <div class="formGroup">
+        <p class="text-center">Already have an account ?</p>
+        <button type="button" class="btn btnPrimary" routerLink="/login">
+          Sign In
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -19,8 +19,12 @@ export class UserService {
       var user = firebase.auth().onAuthStateChanged(function(user){
         if (user) {
           resolve(user);
+          localStorage.setItem('user', JSON.stringify(user));
+          JSON.parse(localStorage.getItem('user'));
         } else {
           reject('No user logged in');
+          localStorage.setItem('user', null);
+          JSON.parse(localStorage.getItem('user'));
         }
       })
     })

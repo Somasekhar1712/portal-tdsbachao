@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service'
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../core/auth.service'
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.component.html',
-  styleUrls: ['login.component.scss']
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss']
 })
-export class LoginComponent {
+export class SignInComponent implements OnInit {
 
   loginForm: FormGroup;
   errorMessage: string = '';
@@ -28,19 +28,6 @@ export class LoginComponent {
     });
   }
 
-  tryFacebookLogin(){
-    this.authService.doFacebookLogin()
-    .then(res => {
-      this.router.navigate(['/user']);
-    })
-  }
-
-  tryTwitterLogin(){
-    this.authService.doTwitterLogin()
-    .then(res => {
-      this.router.navigate(['/user']);
-    })
-  }
 
   tryGoogleLogin(){
     this.authService.doGoogleLogin()
@@ -58,4 +45,7 @@ export class LoginComponent {
       this.errorMessage = err.message;
     })
   }
+  ngOnInit() {
+  }
+
 }
